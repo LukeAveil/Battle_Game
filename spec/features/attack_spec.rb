@@ -14,4 +14,14 @@ feature "attacking players" do
     expect(page).not_to have_content "name2: 50HP"
     expect(page).to have_content "name2: 40HP"
   end
+
+  scenario "reduce Player 1 HP by 10" do
+    sign_in_and_play
+    click_button 'ATTACK!!!'
+    click_button "OK"
+    click_button 'ATTACK!!!'
+    click_button "OK"
+    expect(page).not_to have_content "name1: 50HP"
+    expect(page).to have_content "name1: 40HP"
+  end
 end
