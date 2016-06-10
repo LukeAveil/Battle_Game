@@ -3,7 +3,7 @@ require 'game'
 describe Game do
 
   subject(:game) { described_class.new(player_1, player_2) }
-  subject(:finishedgame) { described_class.new(victim, player_2) }
+  subject(:finished_game) { described_class.new(victim, player_2) }
   let(:player_1) { double(:player_1, hit_points: 50) }
   let(:player_2) { double(:player_2, hit_points: 50) }
   let(:victim) { double(:victim, hit_points: 0) }
@@ -46,13 +46,13 @@ describe Game do
     end
 
     it 'returns true if one player has 0hp' do
-      expect(finishedgame.game_over?).to be true
+      expect(finished_game.game_over?).to be true
     end
   end
 
   describe '#loser' do
     it 'returns a player on less than 0 HP' do
-      expect(finishedgame.loser).to eq victim
+      expect(finished_game.loser).to eq victim
     end
   end
 

@@ -11,8 +11,7 @@ describe 'Switch turns' do
 
   	scenario 'after player_1 attacks' do
   		sign_in_and_play
-  		click_button 'ATTACK!!!'
-      click_button 'OK'
+  		attack_and_confirm
       expect(page).not_to have_content "name1's turn"
       expect(page).to have_content "name2's turn"
   	end

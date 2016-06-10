@@ -7,6 +7,6 @@ def sign_in_and_play
 end
 
 def attack_and_confirm
-click_button("ATTACK!!!")
-click_button("OK")
+  click_button("ATTACK!!!")
+  click_button("OK")
 end
